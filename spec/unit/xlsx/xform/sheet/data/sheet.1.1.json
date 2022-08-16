@@ -65,7 +65,7 @@
   "hyperlinks": [
     {
       "address": "B6", "rId": "rId1",
-      "target": "https://www.npmjs.com/package/exceljs"
+      "hyperlink": "https://www.npmjs.com/package/exceljs"
     }
   ],
   "rels": [

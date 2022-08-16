@@ -169,7 +169,6 @@ const its = {
             // eliminate the undefined
             const clone = cloneDeep(model, false);
 
-            // console.log('result', JSON.stringify(clone));
             // console.log('expect', JSON.stringify(result));
             expect(clone).to.deep.equal(result);
             resolve();

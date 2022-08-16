@@ -32,6 +32,7 @@ describe('Row', () => {
     const d1 = row1.getCell(4);
     d1.value = {
       hyperlink: 'http://www.hyperlink.com',
+      location: 'Sheet1!A1',
       text: 'www.hyperlink.com',
     };
 
@@ -40,7 +41,7 @@ describe('Row', () => {
       5,
       'Hello, World!',
       ,
-      {hyperlink: 'http://www.hyperlink.com', text: 'www.hyperlink.com'},
+      {hyperlink: 'http://www.hyperlink.com', location: 'Sheet1!A1', text: 'www.hyperlink.com'},
     ];
     expect(row1.values).to.deep.equal(values);
     expect(row1.dimensions).to.deep.equal({min: 1, max: 4});
@@ -267,6 +268,7 @@ describe('Row', () => {
     row1.getCell(2).value = 'Hello, World!';
     row1.getCell(4).value = {
       hyperlink: 'http://www.hyperlink.com',
+      location: 'Sheet1!A1',
       text: 'www.hyperlink.com',
     };
     row1.getCell(5).value = null;
@@ -286,6 +288,7 @@ describe('Row', () => {
           type: Enums.ValueType.Hyperlink,
           text: 'www.hyperlink.com',
           hyperlink: 'http://www.hyperlink.com',
+          location: 'Sheet1!A1',
           style: {},
         },
         {address: 'E1', type: Enums.ValueType.Null, style: {}},
@@ -333,6 +336,7 @@ describe('Row', () => {
           type: Enums.ValueType.Hyperlink,
           text: 'www.hyperlink.com',
           hyperlink: 'http://www.hyperlink.com',
+          location: 'Sheet1!A1',
         },
       ],
       number: 1,
@@ -347,7 +351,7 @@ describe('Row', () => {
       5,
       'Hello, World!',
       ,
-      {hyperlink: 'http://www.hyperlink.com', text: 'www.hyperlink.com'},
+      {hyperlink: 'http://www.hyperlink.com', text: 'www.hyperlink.com',location: 'Sheet1!A1'},
     ]);
     expect(row1.getCell(1).type).to.equal(Enums.ValueType.Number);
     expect(row1.getCell(1).value).to.equal(5);
@@ -357,6 +361,7 @@ describe('Row', () => {
     expect(row1.getCell(4).value).to.deep.equal({
       hyperlink: 'http://www.hyperlink.com',
       text: 'www.hyperlink.com',
+      location: 'Sheet1!A1',
     });
     expect(row1.getCell(5).type).to.equal(Enums.ValueType.Null);
     expect(row1.height - 32.5).to.be.below(0.00000001);
