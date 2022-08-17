@@ -34,6 +34,7 @@ describe('Row', () => {
       hyperlink: 'http://www.hyperlink.com',
       location: 'Sheet1!A1',
       text: 'www.hyperlink.com',
+      richText: [],
     };
 
     const values = [
@@ -41,7 +42,7 @@ describe('Row', () => {
       5,
       'Hello, World!',
       ,
-      {hyperlink: 'http://www.hyperlink.com', location: 'Sheet1!A1', text: 'www.hyperlink.com'},
+      {hyperlink: 'http://www.hyperlink.com', location: 'Sheet1!A1', text: 'www.hyperlink.com', richText: []},
     ];
     expect(row1.values).to.deep.equal(values);
     expect(row1.dimensions).to.deep.equal({min: 1, max: 4});
@@ -270,6 +271,7 @@ describe('Row', () => {
       hyperlink: 'http://www.hyperlink.com',
       location: 'Sheet1!A1',
       text: 'www.hyperlink.com',
+      richText: [],
     };
     row1.getCell(5).value = null;
     row1.height = 50;
@@ -289,6 +291,7 @@ describe('Row', () => {
           text: 'www.hyperlink.com',
           hyperlink: 'http://www.hyperlink.com',
           location: 'Sheet1!A1',
+          richText: [],
           style: {},
         },
         {address: 'E1', type: Enums.ValueType.Null, style: {}},
@@ -337,6 +340,7 @@ describe('Row', () => {
           text: 'www.hyperlink.com',
           hyperlink: 'http://www.hyperlink.com',
           location: 'Sheet1!A1',
+          richText: [],
         },
       ],
       number: 1,
@@ -351,7 +355,7 @@ describe('Row', () => {
       5,
       'Hello, World!',
       ,
-      {hyperlink: 'http://www.hyperlink.com', text: 'www.hyperlink.com',location: 'Sheet1!A1'},
+      {hyperlink: 'http://www.hyperlink.com', text: 'www.hyperlink.com',location: 'Sheet1!A1', richText:[]},
     ]);
     expect(row1.getCell(1).type).to.equal(Enums.ValueType.Number);
     expect(row1.getCell(1).value).to.equal(5);
@@ -362,6 +366,7 @@ describe('Row', () => {
       hyperlink: 'http://www.hyperlink.com',
       text: 'www.hyperlink.com',
       location: 'Sheet1!A1',
+      richText: [],
     });
     expect(row1.getCell(5).type).to.equal(Enums.ValueType.Null);
     expect(row1.height - 32.5).to.be.below(0.00000001);

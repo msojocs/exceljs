@@ -126,6 +126,7 @@ describe('Cell', () => {
       hyperlink: 'http://www.link.com',
       location: '',
       text: 'www.link.com',
+      richText: [],
     };
     expect((a1.value = hyperlinkValue)).to.deep.equal(hyperlinkValue);
     expect(a1.value).to.deep.equal(hyperlinkValue);
