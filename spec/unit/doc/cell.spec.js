@@ -124,7 +124,6 @@ describe('Cell', () => {
 
     const hyperlinkValue = {
       hyperlink: 'http://www.link.com',
-      location: '',
       text: 'www.link.com',
       richText: [],
     };
@@ -208,8 +207,8 @@ describe('Cell', () => {
 
     const a1 = sheetMock.getCell('A1');
 
-    const strValue = 'www.link.com';
-    const linkValue = 'http://www.link.com';
+    const strValue = 'www.linkcell.com';
+    const linkValue = 'http://www.linkcell.com';
 
     a1.value = strValue;
 
@@ -307,7 +306,7 @@ describe('Cell', () => {
     expect(a1.type).to.deep.equal(Enums.ValueType.Formula);
     expect(a1.effectiveType).to.equal(Enums.ValueType.String);
 
-    a1.value = {hyperlink: 'http://www.link.com', text: 'www.link.com'};
+    a1.value = {hyperlink: 'http://www.linka1.com', text: 'www.linka1.com'};
     expect(a1.type).to.deep.equal(Enums.ValueType.Hyperlink);
     expect(a1.effectiveType).to.equal(Enums.ValueType.Hyperlink);
   });
