@@ -14,7 +14,9 @@ const test = async () => {
     const wb = new ExcelJS.Workbook(options);
     await wb.xlsx.readFile(TEST_XLSX_FILE_NAME);
     const ws = wb.getWorksheet('Sheet1');
-    ws.spliceColumns(4, 2);
+    // ws.spliceColumns(4, 2);
+    ws.spliceColumns(7, 1);
+    ws.spliceColumns(6, 1);
     
     await wb.xlsx.writeFile(filenameOut);
 };
