@@ -18,6 +18,8 @@ const test = async () => {
     ws.spliceColumns(7, 1);
     ws.spliceColumns(6, 1);
     
+    ws.spliceColumns(6, 0, [undefined,1, 2,3]);
+    
     await wb.xlsx.writeFile(filenameOut);
 };
 test();
