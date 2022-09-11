@@ -1,6 +1,6 @@
 {
-  "name": "exceljs",
-  "version": "4.3.1",
+  "name": "exceljs-enhance",
+  "version": "4.3.4",
   "description": "Excel Workbook Manager - Read and Write xlsx and csv Files.",
   "private": false,
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/exceljs/exceljs.git"
+    "url": "https://github.com/msojocs/exceljs.git"
   },
   "engines": {
     "node": ">=8.3.0"

@@ -116,7 +116,7 @@ describe('WorkbookWriter', () => {
         });
     });
 
-    it('Without styles', () => {
+    it('Without styles', async () => {
       const options = {
         filename: TEST_XLSX_FILE_NAME,
         useStyles: false,
@@ -125,18 +125,23 @@ describe('WorkbookWriter', () => {
         new ExcelJS.stream.xlsx.WorkbookWriter(options),
         'xlsx'
       );
-
-      return wb
-        .commit()
-        .then(() => {
-          const wb2 = new ExcelJS.Workbook();
-          return wb2.xlsx.readFile(TEST_XLSX_FILE_NAME);
-        })
-        .then(wb2 => {
-          testUtils.checkTestBook(wb2, 'xlsx', undefined, {
-            checkStyles: false,
-          });
+        await wb.commit();
+        let wb2 = new ExcelJS.Workbook();
+        wb2 = await wb2.xlsx.readFile(TEST_XLSX_FILE_NAME);
+        return testUtils.checkTestBook(wb2, 'xlsx', undefined, {
+          checkStyles: false,
         });
+      // return wb
+      //   .commit()
+      //   .then(() => {
+      //     const wb2 = new ExcelJS.Workbook();
+      //     return wb2.xlsx.readFile(TEST_XLSX_FILE_NAME);
+      //   })
+      //   .then(wb2 => {
+      //     testUtils.checkTestBook(wb2, 'xlsx', undefined, {
+      //       checkStyles: false,
+      //     });
+      //   });
     });
 
     it('serializes row styles and columns properly', () => {

@@ -3,7 +3,7 @@ const ExcelJS = verquire('exceljs');
 describe('github issues', () => {
   it('pull request 1262 - protect should work with streaming workbook writer', async () => {
     const workbook = new ExcelJS.stream.xlsx.WorkbookWriter({
-      filename: './test.xlsx',
+      filename: './spec/out/test.xlsx',
     });
 
     const sheet = workbook.addWorksheet('data');

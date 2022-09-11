@@ -13,7 +13,7 @@ describe('github issues', () => {
     ];
 
     const workbook = new ExcelJS.stream.xlsx.WorkbookWriter({
-      filename: './test.xlsx',
+      filename: './spec/out/test.xlsx',
       useSharedStrings: true,
     });
 
