@@ -22,7 +22,7 @@ describe('github issues', () => {
 
     // read in file and ensure sheetProtection is there:
     const checkBook = new ExcelJS.Workbook();
-    await checkBook.xlsx.readFile('./test.xlsx');
+    await checkBook.xlsx.readFile('./spec/out/test.xlsx');
 
     const checkSheet = checkBook.getWorksheet('data');
     expect(checkSheet.sheetProtection.spinCount).to.equal(1);

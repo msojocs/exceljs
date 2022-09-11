@@ -25,7 +25,7 @@ describe('github issues', () => {
 
     return new Promise((resolve, reject) => {
       const workbookReader = new ExcelJS.stream.xlsx.WorkbookReader(
-        './test.xlsx',
+        './spec/out/test.xlsx',
         {
           entries: 'emit',
           hyperlinks: 'cache',
