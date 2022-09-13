@@ -343,7 +343,8 @@ export interface CellRichTextValue {
 
 export interface CellHyperlinkValue {
 	text: string;
-	hyperlink: string;
+	hyperlink?: string;
+	location?: string;
 }
 
 export interface CellFormulaValue {
